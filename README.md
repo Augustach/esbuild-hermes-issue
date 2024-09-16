@@ -42,7 +42,7 @@ It seems that the combination of `_a || (_a = null)` and ([this part](https://gi
 
 # How to reproduce
 
-1.	Run the script `yarn copy-modules`. This will generate 1000 copies of the `./src/modules/index.tsx` file.
+1.	Run the script `yarn copy-modules`. This will generate 1000 copies of the `./src/template.tsx` file.
 2.	Run `ESBUILD=true  yarn build` to create the esbuild bundle.
 3.	Check the size of the `./output/index.android.bundle.hrs` Hermes bundle.
 4. Run `ESBUILD=true yarn build` to create the metro bundle.
