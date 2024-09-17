@@ -1,5 +1,5 @@
 import React  from 'react';
-import { View } from 'react-native';
+import { Text } from 'react-native';
 import { TouchableOpacity } from './TouchableOpacity';
 
 export const styled = (Component: React.ComponentType) => (styles: any) => {
@@ -10,27 +10,36 @@ export const styled = (Component: React.ComponentType) => (styles: any) => {
 export const Module = () => {
     return (
         <TouchableOpacity>
-            <Comp1 />
-            <Comp2 />
-            <Comp3 />
-            <Comp4 />
-            <Comp5 />
+            <Comp1 text={TextType.Simple} />
+            <Comp2 text={TextType.Simple} />
+            <Comp3 text={TextType.Simple} />
+            <Comp4 text={TextType.Simple} />
+            <Comp5 text={TextType.Simple} />
         </TouchableOpacity>
     );
 };
 
-var _a;
+enum TextType {
+    Simple = 1,
+}
 
-// incorrect
-const Comp1 = styled(View)(_a || (_a = null));
-const Comp2 = styled(View)(_a || (_a = null));
-const Comp3 = styled(View)(_a || (_a = null));
-const Comp4 = styled(View)(_a || (_a = null));
-const Comp5 = styled(View)(_a || (_a = null));
 
-// correct
-// const Comp1 = styled(View)(_a || null);
-// const Comp2 = styled(View)(_a || null);
-// const Comp3 = styled(View)(_a || null);
-// const Comp4 = styled(View)(_a || null);
-// const Comp5 = styled(View)(_a || null);
+const Comp1 = ({text }: { text: TextType }) => {
+    return <Text>{text}</Text>;
+};
+
+const Comp2 = ({text}: { text: TextType }) => {
+    return <Text>{text}</Text>;
+};
+
+const Comp3 = ({text}: { text: TextType }) => {
+    return <Text>{text}</Text>;
+};
+
+const Comp4 = ({text}: { text: TextType }) => {
+    return <Text>{text}</Text>;
+};
+
+const Comp5 = ({text}: { text: TextType }) => {
+    return <Text>{text}</Text>;
+};
